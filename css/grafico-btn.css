@@ -1,0 +1,99 @@
+#n{
+    background-color: black;
+    height: 43px;
+    border: 90px;
+    
+}
+#bt_gra{
+    background-color: rgb(191, 191, 194);
+    height: 435px;
+    width: 90px;
+  border: 1px solid rgb(65, 60, 60);
+}
+#jonal{
+   text-align: center;
+}
+.jn1{
+   /* background-color: bisque;*/
+    margin-left: 5px;
+   width: 80px;
+   text-align: center;
+   cursor: pointer;
+}
+.jn2{
+    /* background-color: bisque;*/
+    margin-top: 9px;
+    margin-left: 5px;
+   width: 80px;
+   text-align: center;
+   cursor: pointer;
+}
+.jn1:hover,.jn2:hover{
+    background-color: aquamarine;
+}
+#vn{ 
+    color: rgb(244, 245, 247);
+    /* background-color: rgb(255, 0, 255); */
+     height: 20px;
+     width: 120px;
+     margin-left: -0px;
+     text-align: center;
+    margin-top: -6px;
+    position: relative;
+    transition:left 2000ms;
+    animation: mymove 10s infinite;
+    font-size: 20px;
+}    
+#vn1{
+    color: rgb(244, 245, 247);
+   /* background-color: rgb(255, 0, 0);*/ 
+    height: 20px;
+    width: 120px;
+    margin-left: 123px;
+    margin-top: -20px;
+    text-align: center;
+    position: relative;
+    transition:left 1000ms;
+    animation: mymove 10s infinite;
+    font-size: 20px;
+    transition-delay: 1s;
+}
+#vn,#vn1{animation-timing-function: linear;}
+@keyframes mymove {
+  from {left: -10px;}
+  to {left: 400px;}
+}
+.video{
+   /* background-color: rgb(153, 0, 255);*/
+    margin-top: -435px;
+    margin-left: 5.8rem;
+    width: 466px;
+    height: 435px;
+    
+}
+.yuo_tube{
+    /*background-color: rgb(255, 0, 43);*/
+    width: 550px;
+    height: 435px
+}
+.grafico{
+   /* background-color: blue;*/
+    margin-top: -435px;
+    margin-left: 5.8rem;
+    width: 550px;
+    height: 435px;
+}
+#myChart{
+   /* background-color: rgb(170, 100, 13);*/
+    width: 10px;
+    height: 434px;
+}
+.tradingview-widget-container{
+    margin-top: -385px;
+    margin-left: 528px;
+   
+}
+#tradingview_d3bb1{
+    width: 731px;
+    height: 388px;
+}

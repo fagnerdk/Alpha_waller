@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alpha Wallet</title>
+
+        <link rel="stylesheet" href="css/iput.css">
+        <link rel="stylesheet" href="css/nav.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/masge.css">
+        <link rel="stylesheet" href="css/grafico-btn.css">
+        <link rel="stylesheet" href="css/caixa_anucio.css">
+        <link rel="stylesheet" href="css/caixa_loguin.css">
+
+        <link rel="shortcut icon" href="foto/baixados.jpg" type="image/x-icon">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <!--favico a baixo-->
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JKLM4P4HT"></script>
+        <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+
+                gtag('config', 'G-2JKLM4P4HT');
+        </script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body ononline="onFunction()" onoffline="offFunction()">
+
+        <!--cabessa-->
+        <nav class="tl">
+                <h2 id="ts"></h2>
+                <div class="titulo">
+                        <h1 id="titulo0">Alpha Wallet</h1>
+                </div><!--titulo de carpa-->
+
+                <div id="contenia1-pesquiça">
+
+                        <label for="pesquisar" id="pes">açoes</label>
+                        <input type="" name="pesquisa" id="pesquisar"><br>
+                        <div onclick="mybt()" id="bt0"><input type="submit" value="🔍" id="lupa"></div>
+
+                </div>
+
+                <div class="catera">
+                        <div id="catera0"><i>catera</i></div>
+                        <div id="catera1">300</div>
+                </div>
+
+                <div onclick="butao_logui()" id="entra_loga">Entra</div>
+
+                <div id="foto_cap" style="display: none;"><img src=""></div>
+
+        </nav>
+        <!--corpoo-->
+        <div class="contenia">
+
+
+                <table>
+                        <tr>
+
+                                <th class="data" id="bts"></th>
+                                <th class="data">Data <input type="date" name="mydate" id="mydata"></th>
+                                <!--input data-->
+                                <th class="pl">PL<input type="text" name="mynome" id='mynome'></th>
+                                <!--input nomes dois papeis-->
+                                <th class="qld">QTD <input type="number" name="mynumber" id="mynumber" min="0"></th>
+                                <!--input quantidade de corta-->
+
+
+                                <th class="dive">Dividend</th>
+                                <th class="rs">R$ divide</th>
+                                <th class="dy">D YIELD</th>
+                                <th class="vl">Valo da corta</th>
+                                <th class="fi">Finaceiro</th>
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my1()" id="btss">1</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data1"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl1" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd1" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao1"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede1" placeholder="0,00"
+                                                autocomplete="off"></td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag1"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta1"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl1"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my2()" id="btss">2</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data2"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl2" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd2" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao2"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede2" placeholder="0,00"
+                                                autocomplete="off"></td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag2"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta2"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl2"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my3()" id="btss">3</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data3"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl3" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd3" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao3"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede3" placeholder="0,00"
+                                                autocomplete="off"></td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag3"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta3"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl3"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my4()" id="btss">4</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data4"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl4" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd4" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao4"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede4" placeholder="0,00"
+                                                autocomplete="off"></td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag4"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta4"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl4"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my5()" id="btss">5</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data5"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl5" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd5" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao5"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede5" placeholder="0,00"
+                                                autocomplete="off"></td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag5"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta5"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl5"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my6()" id="btss">6</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data6"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl6" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd6" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao6"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede6" placeholder="0,00"
+                                                autocomplete="off"></td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag6"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta6"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl6"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my7()" id="btss">7</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data7"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl7" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd7" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao7"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede7" placeholder="0,00"
+                                                autocomplete="off"></td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag7"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta7"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl7"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my8()" id="btss">8</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data8"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl8" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd8" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao8"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede8" placeholder="0,00"
+                                                autocomplete="off"></td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag8"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta8"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl8"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my9()" id="btss">9</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data9"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl9" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd9" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao9"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede9" placeholder="0,00"
+                                                autocomplete="off"></td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag9"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta9"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl9"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                        <tr>
+                                <!--<form action="" method="get">-->
+                                <td class="data"><button type="submit" onclick="my10()" id="btss">10</button></td>
+                                <td class="data"><input type="text" name="" class="ip_data1" id="data10"
+                                                autocomplete="off"></td>
+                                <td class="pl"><input type="text" name="" class="ip_açoes" id="pl10" autocomplete="off">
+                                </td>
+                                <td class="qld"><input type="text" name="" class="qtd" id="qtd10" autocomplete="off">
+                                </td>
+                                <td class="dive"><input type="text" name="" class="ip_cotaçao" id="ip_cotaçao10"
+                                                placeholder="0,00" autocomplete="off">
+                                </td>
+                                <td class="rs"><input type="text" name="" class="ip_dive" id="vede10" placeholder="0,00"
+                                                autocomplete="off">
+                                </td>
+                                <td class="dy"><input type="text" name="" class="ip_posen1" id="ip_pcetag10"
+                                                placeholder=" 1,45%" autocomplete="off"></td>
+                                <td class="vl"><input type="text" name="" class="ip_corta1" id="corta10"
+                                                placeholder="R$ 0,00" autocomplete="off"></td>
+                                <td class="fi"><input type="text" name="" class="ip_pvl0" id="pvl10"
+                                                placeholder="R$ 0,00" autocomplete="off">
+                                </td>
+                                <!--</form>-->
+                        </tr>
+                </table>
+
+        </div>
+
+        <!--grafico-->
+        <div id="lp">
+
+                <div id="n">
+                        <br>
+                        <div id="vn">
+                                <div id="btc">BTC</div>
+                        </div>
+                        <div id="vn1">Ibovespa</div>
+
+                </div>
+
+                <!--caixa com noticias-->
+                <div id="bt_gra">
+                        <div id="jonal">
+                                <h1 style="font-size: 20px;">noticias</h1>
+                        </div>
+                        <div id="jn1" onclick="myvolta()" class="jn1"> JN NEWS</div>
+                        <div id="jn2" onclick=" Cultura()" class="jn2"> NBC News</div>
+                        <div id="grafico" class="jn2">grafico</div>
+
+
+                </div>
+
+                <div class="video"><iframe src="" class="yuo_tube" id="yuo_tube" frameborder="0"></iframe></div>
+                <div class="grafico">
+                        <div id="myChart" style="width:100%;max-width:800px"></div>
+                </div>
+
+        </div>
+
+        <!--caixa azul-->
+        <div class="cs">
+                <textarea id="cs"></textarea>
+
+        </div>
+        <!--valores caixa-->
+        <div class="ms">
+                <form action="" method="post">
+                        <div id="meis">
+                                <label for="meis">meis</label>
+                                <input type="number" name="meis" id="ip_soma0" min="1" max="12" value="1" id="ip_soma">
+                                <input type="text" name="" id="ip_soma1" placeholder="R$:0.00" class="ip_soma">
+                        </div>
+                        <div id="ano">
+                                <label for="ano">ano</label>
+                                <input type="number" name="ano" min="1" value="1" id="ip1_soma" class="ip_soma">
+                                <input type="text" name="" id="ip_soma2" placeholder="R$:0.00" class="ip_soma">
+                        </div>
+                        <div id="total">
+                                <label for="total">total</label>
+                                <input type="text" name="total" id="total0" placeholder="R$:0.00" class="ip_soma">
+                        </div>
+
+                </form>
+        </div>
+        <!--caixa verde-->
+        <div class="cx">
+
+                <div style=" font-size: 0.790rem;margin-top: 7px;margin-left: 5px;">EN CAIXA R$:</div>
+                <div style=" font-size: 0.790rem;margin-top: 13px;margin-left: 5px;">LUC / PREJ</div>
+        </div>
+        <!--caixa preta somas dos valores-->
+        <div class="total">
+
+
+                <input type="text" name="#" id="soma_totau" placeholder="R$:0.00">
+                <input type="text" name="#" id="menos_soma" placeholder="R$:0.00">
+
+        </div>
+        <!--caixa_masagem-->
+        <div id="caixa_masage1">
+
+                <div id="caixa_usuario">
+
+                        <ul id="lista" style="list-style-type: none;width: 58px;margin-top: -1px;">
+
+
+                        </ul>
+
+                </div>
+
+                <div id="usuario"><samp class="usuario">fagner</samp></div>
+                <div id="colega" style="display: none;"><samp class="colega">kaio</samp></div>
+
+
+                <div id="form">
+                        <br>
+
+                        <form class="form" action="http://localhost:3000/kaio2?" method="get" id="id_form_msg">
+                                <label for="testo1" class="l_msg">mensagem</label>
+                                <input type="text" name="mesagen" id="nome1" class="msg">
+                                <button class="butao_msg" onclick="enviar_for('id_form_msg')">ok</button>
+                                <button class="butao_delete" id="01" onclick="enviar()">delete</button>
+                        </form>
+
+
+                </div>
+
+        </div>
+
+        <div id="anucio_caixa">
+
+                <div id="anucio0">
+                        <div id="img_anucio0"></div>
+                        <div id="linck_anucio0"><a href="https://shope.ee/6fLSN8yc0v">pai rico pai poble</a></div>
+                </div>
+
+        </div>
+
+
+
+        </div>
+        <!--roda per-->
+        <footer>
+                <p> <span class="bold">Alpha Wallet</span> &copy;2022</p>
+                <div id="contato">
+                        <li><a href="mailto:fagnerwagner9@gmail.com" class="pgl" class="pgl">fagnerwagner9@gmail.com</a>
+                        </li>
+                </div>
+
+        </footer>
+
+        <div id="caixa_loga" style="display: none;">
+                <h1 class="h1_0">loguim</h1>
+
+                <div >
+
+                        <div class="email_0">
+                                <label for="email">email</label>
+                                <input type="email" name="email" id="email" placeholder="@email">
+                        </div>
+
+
+                        <div class="senha">
+                                <label for="senha">senha</label>
+                                <input type="password" name="senha" id="senha" placeholder="senha">
+                        </div>
+
+                        <button class="btn_1" onclick="entra()">entra</button>
+
+                </div>
+
+                <div id="linck">
+
+                        <button>esquecel a senha?</button>
+                        <button onclick="criar()">cria conta</button>
+
+                </div>
+
+        </div>
+        <!---->
+        <div id="caixa_criar" style="display: none;">
+                <h1 class="h1_0">crie sua conta</h1>
+
+                <form action="http://localhost:3000/criaconta?" method="get" id="criar_conta">
+                        <div class="nome_usuario">
+                                <label for="nome#">Nome</label>
+                                <input type="text" name="nome" id="nome" placeholder="Nome">
+                        </div>
+
+                        <div class="email_0">
+                                <label for="email#">email</label>
+                                <input type="email" name="email" id="email" placeholder="email">
+                        </div>
+
+                        <div class="fone">
+                                <label for="telefone#">telefone</label>
+                                <input type="tel" name="telefone" id="telefone" placeholder="telefone">
+                        </div>
+
+                        <div class="senha">
+                                <label for="senha#">senha</label>
+                                <input type="password" name="senha" id="senha" placeholder="senha">
+                        </div>
+
+                        <button class="btn_0" onclick="criar_conta('criar_conta')">cria conta</button>
+
+                </form>
+
+                <div id="linck">
+
+                        <div></div>
+
+
+                </div>
+
+        </div>
+        <script src="js/msagem_form.js"></script>
+        <script src="js/butao.js"></script>
+        <script src="js/grafico_video.js"></script>
+
+        
+        <script src="./js/soma.js"></script>
+
+
+        <script src="./js/ip_soma.js"></script>
+        <script src="./js/BTC.js"></script>
+        <script src="js/noticias-ps.js"></script>
+        <script src="js/soma_total.js"></script>
+        <script src="js/api_mesage.js"></script>
+        <script src="js/usuario_log.js"></script>
+        <script src="js/butao_logo.js"></script>
+
+        <script src="js/entra_form.js"></script>
+        <script src="js/criar_conta.js"></script>
+        <script src="js/dividendo.js"></script>
+</body>

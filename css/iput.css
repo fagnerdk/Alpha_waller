@@ -1,0 +1,48 @@
+.ip_açoes{
+    border: none;
+    background-color:  rgb(236, 224, 53);
+    outline: none;
+}
+.qtd{
+    border: none;
+    background-color: rgb(55, 0, 255);
+    outline: none;
+}
+.ip_cotaçao{
+    border: none;
+    background-color:  brown;
+    outline: none;
+    
+}
+.ip_dive{
+    border: none;
+    background-color:   darkgreen;
+    outline: none;
+    
+}
+.ip_posen1{
+    border: none;
+    background-color:  darkgoldenrod;
+    outline: none;
+    
+}
+.ip_corta1{
+    border: none;
+    background-color:darkred;
+    outline: none;
+}
+.ip_data1{
+    border: none;
+    background-color:dimgray;
+    outline: none;
+}
+.ip_pvl0{
+    border: none;
+    background-color: chartreuse;
+    outline: none;
+    
+}
+::placeholder {
+
+    color: black;
+}

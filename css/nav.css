@@ -1,0 +1,77 @@
+nav{
+    background-color: rgb(99, 42, 165);
+    color: aliceblue; 
+    padding: 20px;
+    width: 1300px;
+    margin-top: -90px;
+    margin-left: -6px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('');
+  
+}
+#contenia1-pesquiça{
+    margin-top: -60px;
+    margin-left: 400px;
+    padding: 15px;
+    width: 180px;
+    background-color: rgba(196, 214, 214, 0.397);
+    border-radius: 3px;
+}
+#bt0{
+   /* background-color: aliceblue;*/
+   margin-top: -20px;
+   margin-left: 157px;
+   border: papayawhip;
+   border-radius: .3rem;
+   cursor: pointer;
+  
+}
+#bt0:hover{
+   /* background-color: rgb(165, 159, 153);*/
+}
+#pes{
+   /* background-color: rgb(51, 255, 0);
+    height: 2px;*/
+    margin-left: -10px;
+}
+#foto_cap{
+    background-color: beige;
+    height: 60px;
+    width: 60px;
+    margin-top:-40px;
+    margin-left:1150px;
+    border-radius: 30px;
+
+    background-position: center;
+    background-size: cover;
+    background-image: url('/foto/258763062_576876326734584_4102132421659271278_n\(1\).jpg');
+}
+#log{
+    height: 60px;
+    width: 60px;
+    margin-top:-40px;
+    margin-left:1150px;
+}
+.catera{
+  /*  background-color: azure;*/
+    color: #000;
+    width: 148px;
+    height: 20px;
+    margin-left: 1000px;
+    margin-top: -30px;
+  
+  
+}   
+#catera0{
+    /*background-color: lime;*/
+    width: 60px;
+    margin-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+#catera1{
+   /* background-color: ;*/
+    width: 60px;
+    margin-left:  81px;
+    margin-top: -18px;
+}    

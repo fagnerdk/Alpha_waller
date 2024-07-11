@@ -1,0 +1,101 @@
+#entra_loga{
+    border-radius: 30px;
+    text-align: center;
+   color: black;
+     width: 50px;
+     margin-left: 1130px;
+     margin-top: -20px;
+     cursor: pointer;
+     transition-duration: 6s;
+}
+#entra_loga:hover{
+    border: solid 1px lawngreen;
+    color: bisque;
+}
+#caixa_loga,#caixa_criar{
+    background-color: rgb(254, 204, 39);
+     width: 300px;
+     height: 300px;
+     margin:9%;
+     border: solid 1px rgb(8, 9, 8);
+     border-radius: 30px;
+     margin-top: -960px;
+     margin-left: 1000px;
+     box-shadow: 6px 10px 40px black;
+}
+.h1_0{
+    text-align: center;
+    
+}
+.nome_usuario{
+  
+    width: 300px;
+    margin-left: 1px;
+   text-align: center;
+
+   
+}
+.email_0{
+  
+    width: 300px;
+    margin-left: 2px;
+   text-align: center;
+   margin-top: 8px;
+   
+}
+.senha{
+    width: 300px;
+    margin-left: 3px;
+   
+    margin-top: 8px;
+    text-align: center;
+}
+.fone{
+    width: 300px;
+    margin-left: -3px;
+   
+    margin-top: 8px;
+    text-align: center;
+}
+#email,#senha,#telefone,#nome{
+    width: 220px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+   outline: none;
+   cursor: pointer;
+}
+
+form{
+    text-align: center;
+}
+.btn_0{
+    color:rgb(7, 11, 7) ;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+.btn_0:hover{
+    background-color: aqua;
+}
+.btn_1{
+    margin-left: 140px;
+    color:rgb(7, 11, 7) ;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+.btn_1:hover{
+    background-color: aqua;
+}     
+#linck{
+    margin-left: 50px;
+    margin-top: 30px;
+}  
+.a_0{
+    display: inline;
+    margin-left: 10px;
+}
+
