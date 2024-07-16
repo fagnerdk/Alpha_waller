@@ -57,7 +57,7 @@
     margin-top: 8px;
     text-align: center;
 }
-#email,#senha,#telefone,#nome{
+#email,#senha,#telefone,#nome,#email_true{
     width: 220px;
     padding: 5px;
     border: none;

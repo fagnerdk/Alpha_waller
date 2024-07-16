@@ -5,7 +5,7 @@ addEventListener("click", (vl) => {
   if (vl.target.id == "jn1") {
 
     document.getElementById("yuo_tube").src =
-    "https://www.youtube.com/embed/MUcAp8gDO8I?si=stn3P-RDHtUye_PG";
+    "https://www.youtube.com/embed/rnZ0uvTXJKc?si=1dh_hudKoS_E7aBo";
    
     document.getElementById("myChart").innerText = "";
     caixa_loga.style.display='none'
