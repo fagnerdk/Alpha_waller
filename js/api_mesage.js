@@ -5,7 +5,7 @@ fetch("http://localhost:3000/kaio3")
     //[0].id;
     
     for (var i = 0; i < data.length; i++) {
-      //console.log(data[i].id+" "+data[i].mesagen)
+      console.log(data)
       if (i == 1) {
         //console.log(data);
         const id_usuario = document.createElement("li");
@@ -32,7 +32,7 @@ fetch("http://localhost:3000/kaio3")
         const mesage_spam = document.createElement("samp");
         mesage_spam.id = usuario_id += i;
         document.getElementById(mesage_valo.id).appendChild(mesage_spam);
-        document.getElementById(mesage_spam.id).innerHTML =data[i].id_mesagen
+        document.getElementById(mesage_spam.id).innerHTML = data[i].id
 
         const foto = document.createElement("div");
         foto.id = "foto_msg";

@@ -6,14 +6,14 @@ async function criar() {
 
 }
 
-/*async function criar_conta(criar_conta) {
+async function criar_conta(criar_conta) {
   var email_true = document.getElementById('email_true').value
   var data_form = $("#" + criar_conta);
   console.log(data_form)
   data_form.submit(function (e) {
     e.preventDefault();
 
-    fetch("http://localhost:3000/usuario")
+    /*fetch("http://localhost:3000/usuario")
       .then((res) => res.json())
       .then((conta) => {
 
@@ -22,7 +22,7 @@ async function criar() {
 
 
           if (conta[i].email == email_true) {
-            ///digete augo para u usuario aqui
+           
           } else {
 
             $.ajax({
@@ -42,7 +42,7 @@ async function criar() {
           }
         }
 
-      });
+      });*/
 
 
 
@@ -50,9 +50,4 @@ async function criar() {
     document.getElementById("caixa_criar").style.display = "none";
   });
 }
-*/
 
-$(document).ready((function(){
-  var nome4 = $('#nome').innerT
-  console.log(nome4)
-})())

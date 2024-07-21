@@ -6,7 +6,7 @@
     var lagura=[...testo.style.width]
     var autura=[...testo.style.height]
     for (let i= 0; i < lagura.length; i++) {
-     // console.log(lagura.length)
+      console.log(lagura.length)
       if(lagura.length>=3 && lagura.length<=9000000){
         testo.style.width = "318px"
       }else(
