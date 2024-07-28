@@ -45,7 +45,8 @@ nav{
 
     background-position: center;
     background-size: cover;
-    background-image: url('/foto/258763062_576876326734584_4102132421659271278_n\(1\).jpg');
+   background-image: url('../foto/usuario_root.jpg');
+   
 }
 #log{
     height: 60px;

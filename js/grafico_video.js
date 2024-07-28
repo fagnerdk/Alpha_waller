@@ -1,24 +1,24 @@
 /*gafico esta abaixo*/
-var caixa_loga= document.getElementById('caixa_loga')
+var caixa_loga = document.getElementById('caixa_loga')
 addEventListener("click", (vl) => {
- 
+
   if (vl.target.id == "jn1") {
 
     document.getElementById("yuo_tube").src =
-    "https://www.youtube.com/embed/iR_0QongQPI?si=lh9Xcq5CQaqtiUVd";
-   
+      "https://www.youtube.com/embed/iR_0QongQPI?si=lh9Xcq5CQaqtiUVd";
+
     document.getElementById("myChart").innerText = "";
-    caixa_loga.style.display='none'
+    caixa_loga.style.display = 'none'
     document.getElementById("entra_loga").style.display = "";
     document.getElementById('caixa_criar').style.display = "none";
 
   } else if (vl.target.id == "jn2") {
 
     document.getElementById("yuo_tube").src =
-    "https://www.youtube.com/embed/sy17sU57OB8?si=VdwJjrfSlVUAq7Hs";
+      "https://www.youtube.com/embed/sy17sU57OB8?si=VdwJjrfSlVUAq7Hs";
 
     document.getElementById("myChart").innerText = "";
-    caixa_loga.style.display='none'
+    caixa_loga.style.display = 'none'
     document.getElementById("entra_loga").style.display = "";
     document.getElementById('caixa_criar').style.display = "none";
 
@@ -113,10 +113,16 @@ addEventListener("click", (vl) => {
     Plotly.newPlot("myChart", data, layout);
 
     document.getElementById("yuo_tube").src = "";
-    caixa_loga.style.display='none'
+    caixa_loga.style.display = 'none'
     document.getElementById("entra_loga").style.display = "";
     document.getElementById('caixa_criar').style.display = "none";
-   
+
+
+  }
+
+  if (localStorage.getItem("usuario_onlane") == 'true') {
+
+    document.getElementById("entra_loga").style.display = "none";
   }
   // grafico 
 });
