@@ -1,0 +1,21 @@
+#usuario_root{
+    margin-left: 1190px;
+    margin-top: -13px;
+   
+}
+#ico_root{
+    width:20px;background-color: rgb(233, 136, 10);
+    height: 20px;
+    border-radius: 30px;
+    background-position: center;
+    background-size: cover;
+    background-image: url('https://th.bing.com/th/id/OIP.TnxUwhiQrL0o1UO2GHfmHgHaHa?w=206&h=206&c=7&r=0&o=5&pid=1.7');
+    cursor: pointer;
+   
+    transition-duration: 1s;
+}
+
+#ico_root:hover{
+   
+    border: solid 1px lime;
+}
