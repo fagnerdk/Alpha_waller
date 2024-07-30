@@ -1,34 +1,71 @@
+var caixa_usuario = document.getElementById('caixa_usuario')
+var arba = document.getElementById("arba")
+var testo = document.getElementById("cs");
+
+arba.addEventListener("click", () => {
+  if (arba.style.marginLeft == '99px') {
+    caixa_usuario.style.width = "0px"
+    arba.style.marginLeft = '0px'
+    document.getElementById('lista').style.display = 'none'
+    document.getElementById('form').style.marginLeft = '1px'
+    document.getElementById('form').style.width = '527px'
+  }
+  else {
+    caixa_usuario.style.width = "100px"
+    arba.style.marginLeft = '99px'
+    testo.style.width = "318px"
+    testo.style.height = "175px";
+    document.getElementById('lista').style.display = ''
+    document.getElementById('form').style.marginLeft = '103px'
+    document.getElementById('form').style.width = '425px'
+
+  }
+  //console.log(arba.style.marginLeft)
+})
+
+
 {
-  var testo = document.getElementById("cs");
+
   testo.style.width = "318px";
   testo.style.height = "175px";
   testo.addEventListener("click", () => {
-    var lagura=[...testo.style.width]
-    var autura=[...testo.style.height]
-    for (let i= 0; i < lagura.length; i++) {
+    var lagura = [...testo.style.width]
+    var autura = [...testo.style.height]
+    for (let i = 0; i < lagura.length; i++) {
       console.log(lagura.length)
-      if(lagura.length>=3 && lagura.length<=9000000){
+      if (lagura.length >= 3 && lagura.length <= 9000000) {
         testo.style.width = "318px"
-      }else(
+
+      } else (
         testo.style.width = "318px"
+
+
       )
-           
-    }
-    for (let i= 0; i < autura.length; i++) {
-      var soma=''
-      if(autura[i]==4){
-        soma= autura[0]+autura[1]
-        
-      }else{
-        soma= autura[0]+autura[1]+autura[2]
+      /** */
+      if (lagura.length >= 3 && lagura.length <= 9000000) {
+        caixa_usuario.style.width = "0px"
+        arba.style.marginLeft = '0px'
+        document.getElementById('lista').style.display = 'none'
+        document.getElementById('form').style.marginLeft = '1px'
+        document.getElementById('form').style.width = '527px'
       }
-      console.log(soma) 
-      if (soma >= "249"){
+      /** */
+    }
+    for (let i = 0; i < autura.length; i++) {
+      var soma = ''
+      if (autura[i] == 4) {
+        soma = autura[0] + autura[1]
+
+      } else {
+        soma = autura[0] + autura[1] + autura[2]
+      }
+      console.log(soma)
+      if (soma >= "249") {
         console.log((testo.style.height = "249px"));
-      }     
+      }
     }
 
-   
+
   });
 }
 const d = new Date();
@@ -42,7 +79,7 @@ function mybt() {
   async function getText() {
     let myObject = await fetch(url);
     let myText = await myObject.json();
-     
+
     const res = (document.getElementById("cs").innerText =
       myText.articles[0].title +
       "" +
