@@ -4,25 +4,31 @@
  height:  416px;
  margin-top:-416px;
  margin-left: 526px ;
+
+
  
 }
 #anucio0{
-    /*border:solid 1px rgb(7, 2, 2) ;*/
+ 
+  /*  border:solid 1px rgb(7, 2, 2) ;*/
     margin-left: 10px;
     margin-top: 10px;
-    width:  250px;
-    height:  250px;
+    width:  100px;
+    height:  111px;
    
-   /* background-color: blue;*/
+  
 }
 #img_anucio0{
   /*  border:solid 0.01px rgb(7, 2, 2) ;*/
-    width:  250px;
-    height:  250px;
+  
+    width:  100px;
+    height:  100px;
     background-size: cover;
     background-image: url('https://down-br.img.susercontent.com/file/76458a1746368c62108e64d71e9554cc');
-   
+  
 }
 #linck_anucio0{
-    margin-left: 70px;
+  text-align: center;
+   font-size: 10px;
+  
 }
