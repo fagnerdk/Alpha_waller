@@ -5,7 +5,7 @@ fetch("http://localhost:3000/kaio3")
     //[0].id;
     
     for (var i = 0; i < data.length; i++) {
-      console.log(data)
+     // console.log(data)
       if (i == 1) {
         //console.log(data);
         const id_usuario = document.createElement("li");

@@ -19,7 +19,7 @@ async function entra() {
     fetch("http://localhost:3000/usuario")
       .then((conta) => conta.json())
       .then((usuario) => {
-        console.log(usuario)
+        //console.log(usuario)
         for (let i = 0; i < usuario.length; i++) {
 
           if (usuario[i].email == email && usuario[i].senha == senha) {

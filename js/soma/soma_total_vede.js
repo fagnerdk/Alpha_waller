@@ -23,16 +23,29 @@ setInterval(() => {
       Number(vede9) +
       Number(vede10));
 }, 1500);
+
 setInterval(() => {
   var anos = document.getElementById("ip1_soma").value;
+
   var vede10 = document.getElementById("ip_soma1").value;
-  document.getElementById("ip_soma2").value =
-    Number(anos) * 12 * Number(vede10);
-  // new Intl.NumberFormat().format(Number(vede10))
+
+  if(anos==0){
+   
+   }else{
+    var vede=(12*anos)*vede10
+    document.getElementById("ip_soma2").value = new Intl.NumberFormat().format(Number(vede.toFixed(2)))
+   }
+  
+   
+  //console.log( new Intl.NumberFormat().format(Number(vede.toFixed(2))))
 }, 1500);
+
 setInterval(() => {
   var a = document.getElementById("ip_soma2").value;
   var b = document.getElementById("soma_totau").value;
-
-  document.getElementById("total0").value = Number(a) + Number(b);
+   
+  var resut=(parseFloat( a.replace(",","."))) + Number(b)
+  document.getElementById("total0").value =new Intl.NumberFormat().format(Number(resut))
+ 
+  
 }, 1500);

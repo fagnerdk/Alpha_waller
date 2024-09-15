@@ -79,22 +79,36 @@ function mybt() {
   async function getText() {
     let myObject = await fetch(url);
     let myText = await myObject.json();
+    let res =document.getElementById("cs")
+    
 
-    const res = (document.getElementById("cs").innerText =
+    if(myText.totalResults>0){
+      res.style.color="black"
+      res = (document.getElementById("cs").innerText =
       myText.articles[0].title +
       "" +
       myText.articles[0].description +
       "" +
       myText.articles[0].content);
+      
     document.getElementById("pesquisar").value = "";
 
     document.getElementById("lupa").style.cursor = "progress";
     setTimeout(() => {
       if (typeof res == "string") {
-        console.log(typeof res);
+       
         document.getElementById("lupa").style.cursor = "pointer";
       }
     }, 1000);
+    }else{
+      res.style.color="red"
+      res.innerText =`nao a resutado para esta pesquissa ${pesquisa} no momento `
+      document.getElementById("pesquisar").value = "";
+      
+         
+    }
   }
   getText();
+
+
 }
