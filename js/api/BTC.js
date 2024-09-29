@@ -14,7 +14,7 @@ setInterval(() => {
    
     valo = myText.BTCBRL["bid"];
     var valo1 = [...valo]
-    console.log( valo1[0]+valo1[1]+valo1[3]);
+   // console.log( valo1[0]+valo1[1]+valo1[3]);
 
     if(Number(valo1[3]+valo1[4]+valo1[5]) >= '001' ){
      var cor = document.getElementById("btc")

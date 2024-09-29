@@ -39,13 +39,13 @@ async function my1() {
   const Mín = btc.regularMarketDayLow; // minima do dia
   const Máx = btc.regularMarketPreviousClose; // max do dia
   document.getElementById("pl1").value = papel; //barra de pesquisa
-  
+
   document.getElementById("mynome").value = ""; // lipa input
 
   document.getElementById("corta1").value = valo_ct[0] = cotaçao; // valo de mecado
   document.getElementById("pvl1").value = papeis * cotaçao
-  
-  
+
+
 }
 
 async function my2() {
@@ -77,7 +77,7 @@ async function my2() {
   document.getElementById("corta2").value = valo_ct[0] = cotaçao; // valo de mecado
   document.getElementById("pvl2").value = papeis * cotaçao;
 
-  console.log(papel);
+
 }
 async function my3() {
   var but2 = document.getElementById("mydata").value; //data

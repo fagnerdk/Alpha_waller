@@ -75,4 +75,4 @@ async function entra() {
 
 //foto
 
-document.getElementById('ipt').addEventListener('click', (e) => console.log(document.getElementById('ipt').value))
+//document.getElementById('ipt').addEventListener('click', (e) => console.log(document.getElementById('ipt').value))

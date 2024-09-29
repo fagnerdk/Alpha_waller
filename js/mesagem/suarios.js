@@ -47,24 +47,26 @@ fetch("http://localhost:3000/kaio3")
       
       
     }
-  })
-  .catch((erro) => console.error(erro));
 
-  if ("online") {
-    function onFunction() {
-      var a = document.getElementById("lane");
-      a.innerHTML = "online";
-      a.style.backgroundColor = "lime";
+    if ("online") {
+      function onFunction() {
+        var a = document.getElementById("lane");
+        a.innerHTML = "online";
+        a.style.backgroundColor = "lime";
+        
+      }
+      onFunction();
       
-    }
-    onFunction();
+    } else {
+      function offFunction() {
+        var b = document.getElementById("lane");
+        b.innerHTML = " offline";
+        b.style.backgroundColor = "red";
+      }
     
-  } else {
-    function offFunction() {
-      var b = document.getElementById("lane");
-      b.innerHTML = " offline";
-      b.style.backgroundColor = "red";
+      offFunction();
     }
+  })
+  .catch((erro) =>{/* console.log(erro)*/});
+
   
-    offFunction();
-  }
