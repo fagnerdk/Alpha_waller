@@ -1,8 +1,11 @@
 
 let x = ''
 let y = ''
-async function meis() {
 
+let a = ''
+let b = ''
+async function meis() {
+  a = document.querySelector("#soma_totau").value
   var meis = document.getElementById("ip_soma0").value;
   var vede1 = document.getElementById("vede1").value;
   var vede2 = document.getElementById("vede2").value;
@@ -39,22 +42,22 @@ setInterval(() => {
 
     let soma1 = Number(valo1)
     let soma2 = Number(valo2)
-    
-   
-    let res = (4*soma2) * soma1
-    if(Number.isNaN(res)){
+
+
+    let res = (4 * soma2) * soma1
+    if (Number.isNaN(res)) {
       valo1 = String(valo1).replace(".", "")
       valo2 = String(valo2).replace(".", "")
       let soma3 = valo1
       let soma4 = valo2
-     
-      res = (4*soma4) * soma3
+
+      res = (4 * soma4) * soma3
       return res
-    }else{
-      
-    return res
-  }
-    
+    } else {
+
+      return res
+    }
+
   }
 
   let promese = new Promise((ok, erro) => {
@@ -66,14 +69,56 @@ setInterval(() => {
   });
 
   promese.then((i) => {
-    document.querySelector("#ip_soma2").value = i.toLocaleString( {style:"currency", currency:"BRL"});
-   // console.log(i)
+    b = document.querySelector("#ip_soma2").value = i.toLocaleString({ style: "currency", currency: "BRL" });
+    // console.log(i)
   })
 
   promese.catch((i) => {
-    document.querySelector("#ip_soma2").value = i.toLocaleString({style:"currency", currency:"BRL"});
+    b = document.querySelector("#ip_soma2").value = i.toLocaleString({ style: "currency", currency: "BRL" });
     //console.log(i)
   })
+
+  /*** */
+  let soma0 = (valo1 = 0, valo2 = 0) => {
+    valo1 = String(valo1).replace(",", ".")
+    valo2 = String(valo2).replace(",", ".")
+
+    let soma1 = Number(valo1)
+    let soma2 = Number(valo2)
+
+
+    let res = soma2 + soma1
+    if (Number.isNaN(res)) {
+      valo1 = String(valo1).replace(".", "")
+      valo2 = String(valo2).replace(".", "")
+      let soma3 = valo1
+      let soma4 = valo2
+
+      res = soma4 + soma3
+      return res
+    } else {
+
+      return res
+    }
+  }
+
+  let promese1 = new Promise((ok, erro) => {
+    if (soma0(a, b) > 200000000000000000000) {
+      erro(BigInt(soma0(a, b)))
+    } else {
+      ok(soma0(a, b))
+    }
+  });
+
+  promese1.then((i) => {
+    document.querySelector("#total0").value = i.toLocaleString({ style: "currency", currency: "BRL" });
+   // console.log(i)
+  })
+  promese1.catch((i) => {
+    document.querySelector("total0").value = i.toLocaleString({ style: "currency", currency: "BRL" });
+    //console.log(i)
+  })
+
 
 
 }, 1500)

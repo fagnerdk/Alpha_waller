@@ -1,7 +1,7 @@
 
 
-let x =''
-let y =''
+let a =''
+let b =''
 
 let soma=(valo1=0,valo2=0)=>{
     valo1=String(valo1).replace(",",".")
@@ -14,10 +14,10 @@ let soma=(valo1=0,valo2=0)=>{
 }
 
 let promese= new Promise((ok,erro)=>{
-    if(soma(x,y)>200000000000000000000){
-        erro( BigInt(soma(x,y)))
+    if(soma(a,b)>200000000000000000000){
+        erro( BigInt(soma(a,b)))
         }else{
-            ok( soma(x,y))
+            ok( soma(a,b))
         }
 });
 
