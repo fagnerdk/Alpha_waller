@@ -1,4 +1,6 @@
 
+let x = ''
+let y = ''
 async function meis() {
 
   var meis = document.getElementById("ip_soma0").value;
@@ -23,73 +25,55 @@ async function meis() {
       Number(vede8) +
       Number(vede9) +
       Number(vede10));
-  document.getElementById("ip_soma1").value = new Intl.NumberFormat().format(Number(yield_vd.toFixed(2)))
-
+  document.getElementById("ip_soma1").value = new Intl.NumberFormat().format(Number(yield_vd.toFixed(3)))
+  var resutado0 = new Intl.NumberFormat().format(Number(yield_vd.toFixed(3)))
+  x = resutado0
 }
-function remove(stryng) {
-
-
-  return stryng.replace(",", "")
-}
-
-
-async function ano() {
-  var anos = document.getElementById("ip1_soma").value;
-
-  var yield_vd = document.getElementById("ip_soma1").value;
-
-  let yield_vd0 = remove(yield_vd)
-  let yield_rs = (12 * anos) * Number(yield_vd0)
-  
-     const obt_valo=[remove(yield_vd)]
-    var rst = 0
-    for(var i = 0; i < obt_valo.length;i++){
-      rst =(12 * anos)* obt_valo[i]
-    }
-    
-    document.getElementById("ip_soma2").value = new Intl.NumberFormat().format(Number(rst.toFixed(3)))
- 
-   
-
-}
-function remove1(stryng) {
-
-
-  return stryng.replace(",", ".")
-}
-async function temp_arposento() {
-  var arposento = document.getElementById("ip_soma2").value;
-  const arposento1=[remove(arposento) ]
-
-  var gasto = document.getElementById("soma_totau").value;
-
-  var gasto1 = [remove1(gasto)]
-
- 
-  
-  let som_1=0
-  let som_2=0
-  for(var i = 0 ; i < arposento1.length;i++){
-    som_1 =Number(arposento1[i])
-  }
-
-  for(var i = 0 ; i < gasto1.length;i++){
-    som_2 =Number(gasto1[i])
-  }
-  let tep= som_1+som_2
-   
-   
-  document.getElementById("total0").value =new Intl.NumberFormat().format(Number(tep.toFixed(3)))
-  
-}
-
 
 setInterval(() => {
   meis()
-  ano()
-  temp_arposento()
- 
+  y = document.querySelector('#ip1_soma').value
+  let soma = (valo1 = 0, valo2 = 0) => {
+    valo1 = String(valo1).replace(",", ".")
+    valo2 = String(valo2).replace(",", ".")
+
+    let soma1 = Number(valo1)
+    let soma2 = Number(valo2)
+    
+   
+    let res = (4*soma2) * soma1
+    if(Number.isNaN(res)){
+      valo1 = String(valo1).replace(".", "")
+      valo2 = String(valo2).replace(".", "")
+      let soma3 = valo1
+      let soma4 = valo2
+     
+      res = (4*soma4) * soma3
+      return res
+    }else{
+      
+    return res
+  }
+    
+  }
+
+  let promese = new Promise((ok, erro) => {
+    if (soma(x, y) > 200000000000000000000) {
+      erro(BigInt(soma(x, y)))
+    } else {
+      ok(soma(x, y))
+    }
+  });
+
+  promese.then((i) => {
+    document.querySelector("#ip_soma2").value = i.toLocaleString( {style:"currency", currency:"BRL"});
+   // console.log(i)
+  })
+
+  promese.catch((i) => {
+    document.querySelector("#ip_soma2").value = i.toLocaleString({style:"currency", currency:"BRL"});
+    //console.log(i)
+  })
+
+
 }, 1500)
-
-
-

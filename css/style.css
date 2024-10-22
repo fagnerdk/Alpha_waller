@@ -172,10 +172,37 @@ input{
    
     
 }
-
+#ip_soma0{
+    background-color: #62ccec;
+    width: 38px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+#ip_soma1{
+    background-color: #62ccec;
+    width: 98px;
+    text-align: center;
+}
+#ip1_soma{
+    background-color: #f170e0;
+    width: 38px;
+    text-align: center;
+}
+#ip_soma2{
+    background-color: #f170e0;
+    width: 98px;
+    text-align: center;
+}
+#total0{
+    background-color: #33e70f;
+    width: 98px;
+    text-align: center;
+}
 #mynome{
     width: 100px;
 }
+
 #bt1{
     background-color: rgb(200, 255, 0);
     border-radius: 20px;
@@ -205,15 +232,15 @@ input{
 }
 #meis{
    margin-top: 7px;
-   margin-left:7px;
+   margin-left:-1px;
 }
 #ano{
  margin-top: 9px;
- margin-left:15px;
+ margin-left:3px;
 }
 #total{
     margin-top: 9px;
-    margin-left:68px ;
+    margin-left:8px ;
     
 }
 .ip_soma{

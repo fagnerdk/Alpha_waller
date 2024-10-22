@@ -49,7 +49,7 @@ async function entra() {
             
                 fr.onload=()=>{
                     foto_cap.style.backgroundImage=`url(${fr.result})`
-                    console.log(files)
+                    //console.log(files)
                 }
                
                 fr.readAsDataURL(files[0])
