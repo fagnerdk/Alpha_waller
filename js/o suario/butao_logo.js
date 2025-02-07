@@ -9,5 +9,6 @@ function butao_logui(params) {
   btn12.style.display = "";
   document.getElementById("myChart").innerText = "";
   document.getElementById("yuo_tube").src =''
+ 
 }
 

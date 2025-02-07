@@ -2,10 +2,15 @@
 let x = ''
 let y = ''
 
-let a = ''
+let soma_totau = ''
+
+
 let b = ''
 async function meis() {
-  a = document.querySelector("#soma_totau").value
+  soma_totau = document.querySelector("#soma_totau").value
+   soma_totau = String(soma_totau).replace(".", "")
+    soma_totau = String(soma_totau).replace(",", ".")
+
   var meis = document.getElementById("ip_soma0").value;
   var vede1 = document.getElementById("vede1").value;
   var vede2 = document.getElementById("vede2").value;
@@ -34,6 +39,7 @@ async function meis() {
 }
 
 setInterval(() => {
+ 
   meis()
   y = document.querySelector('#ip1_soma').value
   let soma = (valo1 = 0, valo2 = 0) => {
@@ -63,62 +69,40 @@ setInterval(() => {
   let promese = new Promise((ok, erro) => {
     if (soma(x, y) > 200000000000000000000) {
       erro(BigInt(soma(x, y)))
+    
     } else {
       ok(soma(x, y))
+     
     }
   });
 
   promese.then((i) => {
     b = document.querySelector("#ip_soma2").value = i.toLocaleString({ style: "currency", currency: "BRL" });
-    // console.log(i)
+    b = String(b).replace(".", "")
+    b= String(b).replace(",", ".")
+
+   let pois_soma = Number(soma_totau)+Number(b) 
+   
+
+   let pp=pois_soma.toLocaleString("pt-br", {currency:"BRL"})
+    document.getElementById('total0').value=pp
+   console.log(pp)
+
   })
 
   promese.catch((i) => {
     b = document.querySelector("#ip_soma2").value = i.toLocaleString({ style: "currency", currency: "BRL" });
-    //console.log(i)
+    b = String(b).replace(".", "")
+    b= String(b).replace(",", ".")
+    
+    let pois_soma = Number(soma_totau)+Number(b) 
+    
+   let pp=pois_soma.toLocaleString("pt-br", {currency:"BRL"})
+   document.getElementById('total0').value=pp
+   console.log(pp)
+
   })
 
-  /*** */
-  let soma0 = (valo1 = 0, valo2 = 0) => {
-    valo1 = String(valo1).replace(",", ".")
-    valo2 = String(valo2).replace(",", ".")
-
-    let soma1 = Number(valo1)
-    let soma2 = Number(valo2)
-
-
-    let res = soma2 + soma1
-    if (Number.isNaN(res)) {
-      valo1 = String(valo1).replace(".", "")
-      valo2 = String(valo2).replace(".", "")
-      let soma3 = valo1
-      let soma4 = valo2
-
-      res = soma4 + soma3
-      return res
-    } else {
-
-      return res
-    }
-  }
-
-  let promese1 = new Promise((ok, erro) => {
-    if (soma0(a, b) > 200000000000000000000) {
-      erro(BigInt(soma0(a, b)))
-    } else {
-      ok(soma0(a, b))
-    }
-  });
-
-  promese1.then((i) => {
-    document.querySelector("#total0").value = i.toLocaleString({ style: "currency", currency: "BRL" });
-   // console.log(i)
-  })
-  promese1.catch((i) => {
-    document.querySelector("total0").value = i.toLocaleString({ style: "currency", currency: "BRL" });
-    //console.log(i)
-  })
-
-
+ 
 
 }, 1500)

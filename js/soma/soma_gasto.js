@@ -28,7 +28,7 @@ function resutado() {
       Number(vl8),
       Number(vl9)
     )
-    document.getElementById("soma_totau").value =new Intl.NumberFormat().format( res.toFixed(3));
+    document.getElementById("soma_totau").value =new Intl.NumberFormat().format( res.toFixed(2));
   
  
 }
