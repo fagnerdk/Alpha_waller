@@ -6,7 +6,8 @@ arba.addEventListener("click", () => {
   if (arba.style.marginLeft == '99px') {
     caixa_usuario.style.width = "0px"
     arba.style.marginLeft = '0px'
-    document.getElementById('lista').style.display = 'none'
+    document.getElementById('lista').style.width = '483px'
+    document.getElementById('lista').style.marginLeft = '1px'
     document.getElementById('form').style.marginLeft = '1px'
     document.getElementById('form').style.width = '527px'
   }
@@ -15,7 +16,8 @@ arba.addEventListener("click", () => {
     arba.style.marginLeft = '99px'
     testo.style.width = "318px"
     testo.style.height = "175px";
-    document.getElementById('lista').style.display = ''
+   document.getElementById('lista').style.marginLeft = `101px`
+    document.getElementById('lista').style.width = '384px'
     document.getElementById('form').style.marginLeft = '103px'
     document.getElementById('form').style.width = '425px'
 
@@ -45,7 +47,7 @@ arba.addEventListener("click", () => {
       if (lagura.length >= 3 && lagura.length <= 9000000) {
         caixa_usuario.style.width = "0px"
         arba.style.marginLeft = '0px'
-        document.getElementById('lista').style.display = 'none'
+        
         document.getElementById('form').style.marginLeft = '1px'
         document.getElementById('form').style.width = '527px'
       }

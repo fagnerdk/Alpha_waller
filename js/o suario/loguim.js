@@ -6,7 +6,7 @@ localStorage.setItem('usuario_onlane', 'false');
 
 async function entra() {
   var id = "";
-  var nome = "kaio";
+  var nome = "";
   var email = document.getElementById("email").value;
   var telefone = "";
   var senha = document.getElementById("senha").value;
@@ -16,10 +16,10 @@ async function entra() {
   else {
 
 
-    fetch("http://localhost:3000/usuario")
+    fetch("http://localhost:3009/lista_usuario")
       .then((conta) => conta.json())
       .then((usuario) => {
-        //console.log(usuario)
+        console.log(usuario)
         for (let i = 0; i < usuario.length; i++) {
 
           if (usuario[i].email == email && usuario[i].senha == senha) {
@@ -49,7 +49,7 @@ async function entra() {
             
                 fr.onload=()=>{
                     foto_cap.style.backgroundImage=`url(${fr.result})`
-                    //console.log(files)
+                    console.log(files)
                 }
                
                 fr.readAsDataURL(files[0])

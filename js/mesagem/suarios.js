@@ -1,13 +1,13 @@
-fetch("http://localhost:3000/kaio3")
+fetch("http://localhost:3009/lista_usuario")
   .then((respose) => respose.json())
   .then((data) => {
     var usuario_id = 1;
-    //[0].id;
+     [0].id;
     
     for (var i = 0; i < data.length; i++) {
-     // console.log(data)
+      console.log(data)
       if (i == 1) {
-        //console.log(data);
+        console.log(data);
         const id_usuario = document.createElement("li");
 
         id_usuario.id =i;
@@ -17,7 +17,7 @@ fetch("http://localhost:3000/kaio3")
         id_usuario.style.marginLeft = "-19px";
         id_usuario.style.marginTop = "3px";
         id_usuario.style.borderRadius = "9px 0px 0px 0px";
-        document.getElementById("lista").appendChild(id_usuario);
+        document.getElementById("").appendChild(id_usuario);
 
         const mesage_valo = document.createElement("div");
         mesage_valo.id = data[i].mesagen
@@ -67,6 +67,6 @@ fetch("http://localhost:3000/kaio3")
       offFunction();
     }
   })
-  .catch((erro) =>{/* console.log(erro)*/});
+  .catch((erro) =>{ console.log(erro)});
 
   

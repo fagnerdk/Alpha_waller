@@ -36,7 +36,7 @@
 </head>
 
 <body ononline="onFunction()" onoffline="offFunction()">
-
+  
         <!--cabessa-->
         <nav class="tl">
                 <h2 id="ts"></h2>
@@ -406,21 +406,29 @@
 
                 <div id="caixa_usuario">
 
-                        <ul id="lista" style="list-style-type: none;width: 58px;margin-top: -1px;">
+                        <ul id="lista" >
+
+                          <li id="usuario" class="usuario">fagner</li>
+                            <li id="usuario" class="usuario">fagner</li>
+                              <li id="usuario" class="usuario">fagner</li>
+                           <!-- <li id="colega" class="colega">kaio</li>-->
+
 
 
                         </ul>
-
+                   
                 </div>
+
                 <div id="arba"></div>
-                <div id="usuario"><samp class="usuario">fagner</samp></div>
-                <div id="colega" style="display: none;"><samp class="colega">kaio</samp></div>
+
+
+                  
 
 
                 <div id="form">
                         <br>
 
-                        <form class="form" action="http://localhost:3000/kaio2?" method="get" id="id_form_msg">
+                        <form class="form" action="http://localhost:3009/mesagen_enviada!" method="get" id="id_form_msg">
                                 <label for="testo1" class="l_msg">mensagem</label>
                                 <input type="text" name="mesagen" id="nome1" class="msg">
                                 <button class="butao_msg" onclick="enviar_for('id_form_msg')">ok</button>
@@ -488,7 +496,7 @@
         <div id="caixa_criar" style="display: none;">
                 <h1 class="h1_0">crie sua conta</h1>
 
-                <form action="http://localhost:3000/criaconta?" method="get" id="criar_conta">
+                <form action="http://localhost:3009/criaconta?" method="get" id="criar_conta">
                         <div class="nome_usuario">
                                 <label for="nome">Nome</label>
                                 <input type="text" name="nome" id="nome" placeholder="Nome" required>
@@ -538,7 +546,7 @@
 
         <script src="js/mesagem/msagem_form.js"></script><!--mesagens de usuarios-->
         <script src="js/mesagem/suarios.js"></script><!--mesagens de usuarios-->
-        <script src="js/mesagem/caixa_messege.js"></script><!--mesagens de usuarios-->
+        <script src="js/mesagem/listade_mesagen.js"></script><!--mesagens de usuarios-->
 
         <script src="js/o suario/butao_logo.js"></script><!--cadastros de usuario-->
         <script src="js/o suario/loguim.js"></script><!--cadastros de usuario-->

@@ -1,3 +1,4 @@
+
 #caixa_masage1 {
   background-color: burlywood;
   background-image: url(/foto/analise-grafica-day-trade.jpg);
@@ -10,6 +11,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+
+}#lista{
+  /*border: #F80813 1px solid;*/
+  width: 384px;
+  height: 345px;
+  margin-left: 101px; 
+  margin-top: 1px;
+  list-style-type: none;
+ overflow:auto;
+ 
 }
 #arba {
   /*border: solid rgb(73, 238, 18) 1px ;*/
@@ -28,25 +40,26 @@
   height: 398px;
   width: 100px;
   margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+ align-content: space-between;
+
+ 
 }
 #usuario {
   background-color: rgb(5, 134, 246);
   padding: 5px;
   width: 100px;
-  margin-left: 120px;
-  margin-top: -30%;
+   display: flex;
+  justify-content: center;
+  margin:5px;
+ 
+
+  /*margin-left: 120px;*/
+  margin-top: 300px;
 
   border-radius: 80px 80px 0px 80px;
 }
-#colega {
-  background-color: rgb(5, 246, 9);
-  padding: 5px;
-  width: 100px;
-  margin-left: 320px;
-  margin-top: -5%;
-  border-radius: 80px 80px 80px 0px;
-}
-
 .msg {
   width: 170px;
   border-radius: 5px;
