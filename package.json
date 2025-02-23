@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",  
+ /* "type": "module",*/  
   "dependencies": {
     "abort-controller": "^3.0.0",
     "agent-base": "^6.0.2",

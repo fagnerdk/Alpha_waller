@@ -44,16 +44,5 @@ async function api_lista_mg(obj){
 
 
 
+
         
-/* const id_usuario= document.createElement("li");
-
-        id_usuario.id =i
-
-        id_usuario.style.backgroundColor = "rgb(8, 8, 239)";
-        id_usuario.style.padding = "5px";
-        id_usuario.style.width = "100px";
-        id_usuario.style.marginLeft = `200px`;
-        id_usuario.style.marginTop = `${mage_top}`;
-        id_usuario.style.borderRadius = "80px 80px 0px 80px";
-        id_usuario.innerHTML=lista_mg.rows[i].mesagen
-        document.getElementById("mesage_listada").appendChild(id_usuario);*/

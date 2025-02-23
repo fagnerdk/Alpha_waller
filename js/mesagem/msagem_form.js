@@ -1,39 +1,40 @@
-const form = document.querySelector(".form");
-let usuario = document.querySelector(".usuario");
-var mesagen = document.getElementById("nome1");
 
-form.addEventListener("click", (valo) => {
-  if (valo.target.attributes.class.value == "butao_delete") {
-    mesagen.value = "";
-  }
+ const socket = io('ws://localhost:3009');
+ let  inp = document.getElementById("message");
+ let usuario = document.querySelector(".usuario");
+ let mage_top =400
 
-  if (valo.target.attributes.class.value == "butao_msg") {
-    
-    usuario.innerHTML = mesagen.value;
-    mesagen.value;
-  }
-});
+socket.on('message',text =>{
+
+ let usuario = document.createElement('li')
+ 
+    usuario.id = Math.random()
+
+    usuario.style.backgroundColor = "rgb(5, 134, 246)";
+        usuario.style.padding = "5px";
+        usuario.style.width = "100px";
+        usuario.style.marginLeft = `20px`;
+        usuario.style.marginTop = `${mage_top}`;
+        usuario.style.borderRadius = "80px 80px 0px 80px";
+        usuario.style.display='flex'
+        usuario.style.textAlign='center'
+        usuario.style.margin='10px'
+        usuario.innerHTML = text
+        document.getElementById("lista").appendChild(usuario);
+  
+
+
+})
 
 function enviar_for(id_form_msg) {
-  var id_form = $("#" + id_form_msg);
+ 
+const text=inp.value
 
-  id_form.submit(function (e) {
-    e.preventDefault();
+ socket.emit('message',text)
 
-    $.ajax({
-      type: id_form.attr("method"),
-      url: id_form.attr("action"),
-      data: id_form.serialize(),
-      success: function (i) {
-        console.log("mesagen enviada com sucesso!");
-
-        console.log(i);
-      },
-      erro: function () {
-        console.log("erro");
-      },
-    });
-
-    mesagen.value = "";
-  });
+   inp.value='' 
+ 
+    
+  console.log(inp.value)
+ 
 }

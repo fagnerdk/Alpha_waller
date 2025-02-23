@@ -32,7 +32,7 @@
         </script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.min.js"></script>
 </head>
 
 <body ononline="onFunction()" onoffline="offFunction()">
@@ -409,8 +409,7 @@
                         <ul id="lista" >
 
                           <li id="usuario" class="usuario">fagner</li>
-                            <li id="usuario" class="usuario">fagner</li>
-                              <li id="usuario" class="usuario">fagner</li>
+                           
                            <!-- <li id="colega" class="colega">kaio</li>-->
 
 
@@ -428,12 +427,16 @@
                 <div id="form">
                         <br>
 
-                        <form class="form" action="http://localhost:3009/mesagen_enviada!" method="get" id="id_form_msg">
+                       <!-- <form class="form" action="http://localhost:3009/mesagen_enviada!" method="get" id="id_form_msg">-->
+
                                 <label for="testo1" class="l_msg">mensagem</label>
-                                <input type="text" name="mesagen" id="nome1" class="msg">
-                                <button class="butao_msg" onclick="enviar_for('id_form_msg')">ok</button>
+                                <input  type="text" name="mesagen" id="message" class="msg">
+
+                                <button class="butao_msg" onclick="enviar_for('id_form_msg')">ok</button><!--envia mesagen-->
+
                                 <button class="butao_delete" id="01" onclick="enviar()">delete</button>
-                        </form>
+
+                       <!-- </form>-->
 
 
                 </div>
