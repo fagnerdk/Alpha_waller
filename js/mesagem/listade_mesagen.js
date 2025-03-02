@@ -1,5 +1,5 @@
 
-/*listas de todas mesaden*/
+/*listas de todas mesaden
 
  api_lista_mg ("http://localhost:3009/lista_mesagen")
 let mage_top =400
@@ -39,10 +39,8 @@ async function api_lista_mg(obj){
 
 
 }
-
+/*
 /*listas de todas mesaden*/
 
 
-
-
-        
+  

@@ -4,13 +4,15 @@
  let usuario = document.querySelector(".usuario");
  let mage_top =400
 
+
+
 socket.on('message',text =>{
 
  let usuario = document.createElement('li')
  
-    usuario.id = Math.random()
-
-    usuario.style.backgroundColor = "rgb(5, 134, 246)";
+        usuario.id = socket.id
+        console.log(usuario)
+        usuario.style.backgroundColor = "rgb(5, 134, 246)";
         usuario.style.padding = "5px";
         usuario.style.width = "100px";
         usuario.style.marginLeft = `20px`;
@@ -21,20 +23,22 @@ socket.on('message',text =>{
         usuario.style.margin='10px'
         usuario.innerHTML = text
         document.getElementById("lista").appendChild(usuario);
-  
 
-
+    inp.value=''
 })
 
 function enviar_for(id_form_msg) {
  
 const text=inp.value
 
+if (inp.value=='') {
+  console.log('erro')
+}else{
  socket.emit('message',text)
 
-   inp.value='' 
+ }
  
     
-  console.log(inp.value)
+  //console.log(inp.value)
  
 }
