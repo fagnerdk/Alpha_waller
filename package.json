@@ -2,8 +2,7 @@
   "name": "alpha-_wallet",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
- /* "type": "module",*/  
+  "main": "index.js", 
   "dependencies": {
     "abort-controller": "^3.0.0",
     "agent-base": "^6.0.2",
