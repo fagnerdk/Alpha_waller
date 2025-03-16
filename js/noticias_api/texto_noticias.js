@@ -1,25 +1,28 @@
-var caixa_usuario = document.getElementById('caixa_usuario')
-var arba = document.getElementById("arba")
-var testo = document.getElementById("texto_noticia");
+let caixa_usuario = document.getElementById('caixa_usuario')
+let arba = document.getElementById("arba")
+let testo = document.getElementById("texto_noticia");
+let lista_msg = document.getElementById("lista_msg")
 
 arba.addEventListener("click", () => {
   if (arba.style.marginLeft == '99px') {
     caixa_usuario.style.width = "0px"
     arba.style.marginLeft = '0px'
-    document.getElementById('lista').style.width = '483px'
-    document.getElementById('lista').style.marginLeft = '1px'
+    lista_msg.style.width = '483px'
+    lista_msg.style.marginLeft = '1px'
     document.getElementById('form').style.marginLeft = '1px'
     document.getElementById('form').style.width = '527px'
+    lista_msg.style.display=""
   }
   else {
     caixa_usuario.style.width = "100px"
     arba.style.marginLeft = '99px'
     testo.style.width = "318px"
     testo.style.height = "175px";
-   document.getElementById('lista').style.marginLeft = `101px`
-    document.getElementById('lista').style.width = '384px'
+    lista_msg.style.marginLeft = `101px`
+    lista_msg.style.width = '384px'
     document.getElementById('form').style.marginLeft = '103px'
     document.getElementById('form').style.width = '425px'
+    lista_msg.style.display=""
 
   }
   //console.log(arba.style.marginLeft)
@@ -30,14 +33,16 @@ arba.addEventListener("click", () => {
 
   testo.style.width = "318px";
   testo.style.height = "175px";
-  testo.addEventListener("click", () => {
+
+  testo.addEventListener("mouseover", () => {
+     lista_msg.style.display="none"
     var lagura = [...testo.style.width]
     var autura = [...testo.style.height]
     for (let i = 0; i < lagura.length; i++) {
       console.log(lagura.length)
       if (lagura.length >= 3 && lagura.length <= 9000000) {
         testo.style.width = "318px"
-
+      
       } else (
         testo.style.width = "318px"
 
@@ -47,7 +52,7 @@ arba.addEventListener("click", () => {
       if (lagura.length >= 3 && lagura.length <= 9000000) {
         caixa_usuario.style.width = "0px"
         arba.style.marginLeft = '0px'
-        
+
         document.getElementById('form').style.marginLeft = '1px'
         document.getElementById('form').style.width = '527px'
       }

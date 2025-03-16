@@ -1,8 +1,8 @@
 
  const socket = io('ws://localhost:3009');
- let  inp = document.getElementById("message");
- let usuario = document.querySelector(".usuario");
- let text_noticinha=document.getElementById("lista")
+ var  inp = document.getElementById("message");
+ var usuario = document.querySelector(".usuario");
+ var lista_msg1=document.getElementById("lista_msg")
  let mage_top =400
 
  socket.on('message_rcb', (arg) => { 
@@ -17,7 +17,7 @@ usuario_locau.style.display='flex'
 usuario_locau.style.textAlign='center'
 usuario_locau.style.margin='10px'
 usuario_locau.innerHTML = arg
-document.getElementById("lista").appendChild(usuario_locau);
+lista_msg1.appendChild(usuario_locau);
 })
 
 socket.on('message',(text) =>{
@@ -35,14 +35,14 @@ socket.on('message',(text) =>{
         usuario.style.borderRadius = "80px 80px 80px 0px";
         usuario.style.textAlign="center"
         usuario.innerHTML=text
-        document.getElementById("lista").appendChild(usuario);
+        lista_usuario1.appendChild(usuario);
 
     inp.value=''
 })
 
 
 function enviar_for() {
-lista_msg.style.display=''
+ lista_msg1.style.display=""
 const text=inp.value
 
 if (inp.value=='') {
