@@ -35,7 +35,7 @@ socket.on('message',(text) =>{
         usuario.style.borderRadius = "80px 80px 80px 0px";
         usuario.style.textAlign="center"
         usuario.innerHTML=text
-        lista_usuario1.appendChild(usuario);
+        lista_msg1.appendChild(usuario);
 
     inp.value=''
 })
