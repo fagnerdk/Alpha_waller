@@ -4,7 +4,7 @@
  let usuario = document.querySelector(".usuario");
  let mage_top =400
 
- socket.on('hello', (arg) => { 
+ socket.on('message_rcb', (arg) => { 
 let usuario_locau = document.createElement('li') 
 usuario_locau.style.backgroundColor =" rgb(5, 134, 246)"
 usuario_locau.style.padding = "5px";
