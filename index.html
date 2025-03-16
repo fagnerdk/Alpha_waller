@@ -363,8 +363,8 @@
         </div>
 
         <!--caixa azul-->
-        <div class="cs">
-                <textarea id="cs"></textarea>
+        <div class="texto_noticia">
+                <textarea id="texto_noticia"></textarea>
 
         </div>
         <!--valores caixa-->
@@ -407,7 +407,7 @@
 
                 <div id="caixa_usuario">
                       
-                          <ul id="lista" >
+                        <ul id="lista" >
 
                           <!-- <li id="usuario" class="usuario">fagner</li>
                            
@@ -423,19 +423,15 @@
 
 
                 <div id="form">
-                        <br>
+                        
+                    <br>
+                       
+                    <label for="testo1" class="l_msg">mensagem</label>
+                    <input  type="text" name="mesagen" id="message" class="msg">
 
-                       <!-- <form class="form" action="http://localhost:3009/mesagen_enviada!" method="get" id="id_form_msg">-->
-
-                                <label for="testo1" class="l_msg">mensagem</label>
-                                <input  type="text" name="mesagen" id="message" class="msg">
-
-                                <button class="butao_msg" onclick="enviar_for('id_form_msg')">ok</button><!--envia mesagen-->
-
-                                <button class="butao_delete" id="01" onclick="enviar()">delete</button>
-
-                       <!-- </form>-->
-
+                    <button class="butao_msg" onclick="enviar_for('id_form_msg')">ok</button>
+                    <!--envia mesagen-->
+                    <button class="butao_delete" id="01" onclick="enviar()">delete</button>       
 
                 </div>
 
@@ -540,8 +536,8 @@
         <script type="module" src="js/soma/soma_total_vede.js"></script><!--soma da tabela-->
         <script src="./js/soma/soma_gasto.js"></script><!--soma da tabela-->
 
-        <script src="./js/api/BTC.js"></script><!--apis-->
-        <script src="js/api/noticias-ps.js"></script><!--apis-->
+        <script src="./js/noticias_api/BTC.js"></script><!--apis-->
+        <script src="./js/noticias_api/texto_noticias.js"></script><!--apis-->
 
 
 

@@ -90,7 +90,7 @@ text-align: center;
     margin: 5px;
     
 }
-.cs{
+.texto_noticia{
     background-color: rgb(138, 251, 251);
     border: 1px solid rgb(22, 24, 23); 
     margin-left: -4px;
@@ -98,7 +98,7 @@ text-align: center;
     height: 180px;
     width: 324px;
 }
-#cs{
+#texto_noticia{
     background-color: aquamarine;
   
   font-size: medium;

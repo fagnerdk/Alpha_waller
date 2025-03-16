@@ -1,6 +1,6 @@
 var caixa_usuario = document.getElementById('caixa_usuario')
 var arba = document.getElementById("arba")
-var testo = document.getElementById("cs");
+var testo = document.getElementById("texto_noticia");
 
 arba.addEventListener("click", () => {
   if (arba.style.marginLeft == '99px') {
@@ -81,12 +81,12 @@ function mybt() {
   async function getText() {
     let myObject = await fetch(url);
     let myText = await myObject.json();
-    let res =document.getElementById("cs")
+    let res =testo
     
 
     if(myText.totalResults>0){
       res.style.color="black"
-      res = (document.getElementById("cs").innerText =
+      res = (testo.innerText =
       myText.articles[0].title +
       "" +
       myText.articles[0].description +

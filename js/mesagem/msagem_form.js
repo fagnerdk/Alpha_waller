@@ -2,6 +2,7 @@
  const socket = io('ws://localhost:3009');
  let  inp = document.getElementById("message");
  let usuario = document.querySelector(".usuario");
+ let text_noticinha=document.getElementById("lista")
  let mage_top =400
 
  socket.on('message_rcb', (arg) => { 
@@ -41,7 +42,7 @@ socket.on('message',(text) =>{
 
 
 function enviar_for() {
-
+lista_msg.style.display=''
 const text=inp.value
 
 if (inp.value=='') {
