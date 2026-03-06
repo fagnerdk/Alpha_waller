@@ -1,5 +1,5 @@
 
- const socket = io('ws://localhost:3009');
+ /*const socket = io('ws://localhost:3009');
  var  inp = document.getElementById("message");
  var usuario = document.querySelector(".usuario");
  var lista_msg1=document.getElementById("lista_msg")
@@ -53,7 +53,4 @@ if (inp.value=='') {
    inp.value=''
 
  }
- 
-  //console.log(inp.value)
- 
-}
+}*/

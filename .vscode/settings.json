@@ -2,5 +2,11 @@
     "liveServer.settings.port": 5501,
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "grafico",
+        "Ibovespa",
+        "meis",
+        "noticias"
+    ]
 }

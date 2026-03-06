@@ -59,12 +59,12 @@
 
                 <div onclick="butao_logui()" id="entra_loga">Entra</div>
 
-                <div id="foto_cap" style="display:none;"></div>
+                <div id="foto_cap"  style="display:none"></div>
 
 
 
                 <div id="usuario_root" style=" display: none;">
-
+                    
                         <label for="foto_usuario">
                                 <div id="ico_root">
                                 </div>
@@ -343,7 +343,7 @@
 
                 </div>
 
-                <!--caixa com noticias-->
+                <!--caixa com noticia-->
                 <div id="bt_gra">
                         <div id="jonal">
                                 <h1 style="font-size: 20px;">noticias</h1>
@@ -355,18 +355,19 @@
 
                 </div>
 
-                <div class="video"><iframe src="" class="yuo_tube" id="yuo_tube" frameborder="0"></iframe></div>
+                <div class="video"><iframe src="" class="yuo_tube" id="yuo_tube" frameborder="0" aria-hidden="true"></iframe></div>
                 <div class="grafico">
-                        <div id="myChart" style="width:100%;max-width:800px"></div>
+                        <div id="myChart" style="width:100%;max-width:800px" ></div>
                 </div>
 
         </div>
 
         <!--caixa azul-->
         <div class="texto_noticia">
-                <textarea id="texto_noticia"></textarea>
-
+                <textarea id="texto_noticia" aria-label="Search"></textarea>
+                
         </div>
+       
         <!--valores caixa-->
         <div class="ms">
                 <form action="" method="post">
@@ -393,7 +394,7 @@
                 <div style=" font-size: 0.790rem;margin-top: 7px;margin-left: 5px;">EN CAIXA R$:</div>
                 <div style=" font-size: 0.790rem;margin-top: 13px;margin-left: 5px;">LUC / PREJ</div>
         </div>
-        <!--caixa preta somas dos valores-->
+        <!--caixa preta somas dos valor-->
         <div class="total">
 
 
@@ -401,7 +402,7 @@
                 <input type="text" name="#" id="menos_soma" placeholder="R$:0.00">
 
         </div>
-        <!--caixa_masagem-->
+        <!--caixa_massage-->
         <div id="caixa_masage1">
             
 
@@ -409,7 +410,7 @@
                       
                         <ul id="lista_msg" >
 
-                          <!-- <li id="usuario" class="usuario">fagner</li>
+                         <!-- <li id="usuario" class="usuario">fagner</li>
                            
                            <li id="colega" class="colega">kaio</li>-->
                         </ul>
@@ -425,7 +426,7 @@
                     <br>
                        
                     <label for="testo1" class="l_msg">mensagem</label>
-                    <input  type="text" name="mesagen" id="message" class="msg">
+                    <input  type="text" name="mesagen" id="message" class="msg" aria-label="Search">
 
                     <button class="butao_msg" onclick="enviar_for('id_form_msg')">ok</button>
                     <!--envia mesagen-->
@@ -477,12 +478,15 @@
 
                         <button class="btn_1" onclick="entra()">entra</button>
 
+                       
+
                 </div>
 
                 <div id="linck">
 
                         <button>esquecel a senha?</button>
                         <button onclick="criar()">cria conta</button>
+                        <button class="btn_0" onclick="x()">x</button>
 
                 </div>
 
@@ -540,8 +544,8 @@
 
 
         <script src="js/mesagem/msagem_form.js"></script><!--mesagens de usuarios-->
-        <script src="js/mesagem/suarios.js"></script><!--mesagens de usuarios-->
-        <script src="js/mesagem/listade_mesagen.js"></script><!--mesagens de usuarios-->
+        
+       <script src="js/mesagem/suarios.js"></script><!--mesagens de usuarios-->
 
         <script src="js/o suario/butao_logo.js"></script><!--cadastros de usuario-->
         <script src="js/o suario/loguim.js"></script><!--cadastros de usuario-->

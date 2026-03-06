@@ -36,18 +36,20 @@
        
     })
     
-
-    
-   return lista_obj[0]
+   
+   
+   
+    return lista_obj
 
   }
 
-  lista_usuario()
+ lista_usuario().then((valor)=>{console.log(valor)})
+  
 
-let promese = new Promise((erro,ok)=>{
+/*let promese = new Promise((erro,ok)=>{
 
    ok(lista_usuario())
-  // erro('erro')
+   erro('erro')
 
 })
 
@@ -56,4 +58,4 @@ promese.then(
   function(valu){console.log(valu)},
   function(err){console.log(err)}
 
-)
+)*/
