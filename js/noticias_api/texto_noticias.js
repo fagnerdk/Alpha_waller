@@ -35,7 +35,7 @@ arba.addEventListener("click", () => {
   testo.style.height = "175px";
 
   testo.addEventListener("mouseover", () => {
-     lista_msg.style.display="none"
+     //lista_msg.style.display="none"
     var lagura = [...testo.style.width]
     var autura = [...testo.style.height]
     for (let i = 0; i < lagura.length; i++) {
@@ -48,7 +48,7 @@ arba.addEventListener("click", () => {
 
 
       )
-      /** */
+      
       if (lagura.length >= 3 && lagura.length <= 9000000) {
         caixa_usuario.style.width = "0px"
         arba.style.marginLeft = '0px'
@@ -56,7 +56,7 @@ arba.addEventListener("click", () => {
         document.getElementById('form').style.marginLeft = '1px'
         document.getElementById('form').style.width = '527px'
       }
-      /** */
+      
     }
     for (let i = 0; i < autura.length; i++) {
       var soma = ''

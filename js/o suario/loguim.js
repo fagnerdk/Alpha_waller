@@ -1,107 +1,133 @@
-const socket = io('ws://localhost:3009')
-
-var  inp = document.getElementById("message");
- var usuario = document.querySelector(".usuario");
- var lista_msg1=document.getElementById("lista_msg")
- let mage_top =400
 
 
+// 1. Inicialização do socket
+const socket = io('http://localhost:3009');
 
-//lista de mensagens recebidas
+var inp = document.getElementById("message");
+var usuario = document.querySelector(".usuario");
+var lista_msg1 = document.getElementById("lista_msg");
 
- socket.on('message_rcb', (arg) => { 
-let usuario_locau = document.createElement('li') 
-usuario_locau.style.backgroundColor =" rgb(5, 134, 246)"
-usuario_locau.style.padding = "5px";
-usuario_locau.style.width = "100px";
-usuario_locau.style.marginLeft = `20px`;
-usuario_locau.style.marginTop = `${mage_top}`;
-usuario_locau.style.borderRadius = "80px 80px 0px 80px";
-usuario_locau.style.display='flex'
-usuario_locau.style.textAlign='center'
-usuario_locau.style.margin='10px'
-usuario_locau.innerHTML = arg
-lista_msg1.appendChild(usuario_locau);
-})
+// CONFIGURAÇÃO DO CONTÊINER: Centralizado e com balões próximos verticalmente
+lista_msg1.style.display = "flex";
+lista_msg1.style.flexDirection = "column";
+lista_msg1.style.gap = "4px";           // Aproxima os balões verticalmente
+lista_msg1.style.padding = "15px";
+lista_msg1.style.listStyle = "none";
+lista_msg1.style.maxWidth = "450px";    // Define uma largura máxima estável
+lista_msg1.style.margin = "0 auto";     // Centraliza a caixa do chat na página
 
-socket.on('message',(text) =>{
- let usuario = document.createElement('li')
-usuario.style.backgroundColor = "rgb(5, 246, 9)";
-usuario.style.padding = "5px";
-usuario.style.width = "100px";
-usuario.style.marginLeft = `190px`;
-usuario.style.marginTop = `${mage_top}`;
-usuario.style.margin='15px;'
-usuario.style.borderRadius = "80px 80px 80px 0px";
-usuario.style.textAlign="center"
-usuario.innerHTML=text
-lista_msg1.appendChild(usuario);
+// 🚀 Variáveis globais para controle de sessão
+let usuarioLogado = false;
+let usuarioLogadoDados = null; // Armazenará os dados do banco (id, email, nome) após o login
 
-    inp.value=''
-})
+// 2. OUVINTE DO SOCKET NO ESCOPO GLOBAL (Mensagens Recebidas)
+socket.on('message', (text) => {
+  if (!usuarioLogado) {
+    console.log("Mensagem recebida bloqueada: Usuário não está logado ainda.");
+    return; 
+  }
 
+  // BALÃO VERDE - MENSAGEM RECEBIDA (Canto Esquerdo)
+  let balaoRecebido = document.createElement('li'); 
+  
+  // 🚀 ID ÚNICO: Identifica que é recebida e adiciona um marcador de tempo exclusivo
+  balaoRecebido.id = "msg-rec-" + Date.now();
+  
+  balaoRecebido.style.backgroundColor = "rgb(5, 246, 9)"; 
+  balaoRecebido.style.padding = "8px 12px";
+  balaoRecebido.style.maxWidth = "70%";
+  balaoRecebido.style.width = "fit-content";          // Faz o balão se ajustar ao tamanho do texto
+  balaoRecebido.style.borderRadius = "15px 15px 15px 0px";
+  balaoRecebido.style.margin = '5px 250px';
+  balaoRecebido.innerHTML = text;
+  
+  lista_msg1.appendChild(balaoRecebido);
+});
 
-//loguin do usuario
+// 3. FUNÇÃO PARA ENVIAR MENSAGEM
+function enviar_for() {
+  if (!usuarioLogado) {
+    alert("Você precisa fazer login para enviar mensagens!");
+    return;
+  }
+
+  const text = inp.value.trim();
+
+  if (text == '') {
+    console.log('erro');
+    inp.value = '';
+  } else {
+    socket.emit('message', text);
+
+    // BALÃO AZUL - MENSAGEM PRÓPRIA ENVIADA (Canto Direito)
+    let balaoProprio = document.createElement('li');
+    
+    // 🚀 ID ÚNICO E SEGURO: Combina o ID ou e-mail do usuário logado com o timestamp atual
+    const identificadorUsuario = usuarioLogadoDados.id || usuarioLogadoDados.email;
+    balaoProprio.id = `msg-user-${identificadorUsuario}-${Date.now()}`;
+    
+    balaoProprio.style.backgroundColor = "rgb(5, 134, 246)";
+    balaoProprio.style.color = "white";
+    balaoProprio.style.padding = "8px 12px";
+    balaoProprio.style.maxWidth = "70%";
+    balaoProprio.style.width = "fit-content";          // Faz o balão se ajustar ao tamanho do texto
+    balaoProprio.style.borderRadius = "15px 15px 0px 15px";       
+    balaoProprio.style.margin = '5px 150px';
+    balaoProprio.innerHTML = text;
+    
+    lista_msg1.appendChild(balaoProprio);
+    inp.value = '';
+  }
+}
+
+// 4. LOGUIN DO USUÁRIO
 async function entra() {
-   
+  let emailInput = document.getElementById("email").value.trim();
+  let senhaInput = document.getElementById("senha").value.trim();
 
-  let id = "";
-  let nome = "";
-  let email = document.getElementById("email").value;
-  let telefone = "";
-  let senha = document.getElementById("senha").value;
-
-  if (email == '' || senha == '') {
-    alert('ola voce esquecel de prenche seus dados de loguin!')
+  if (emailInput == '') {
+    document.getElementById("email").style.color = 'red';
+    document.getElementById("email").value = ' preencha o campo email';
+    return;
+  } else if (senhaInput == '') {
+    document.getElementById("senha").style.color = 'red';
+    document.getElementById("senha").value = ' preencha o campo senha';
+    document.getElementById("senha").type = 'text';
+    return;
   }
   
-   fetch("http://localhost:3009/lista_usuario")
-      .then((conta) => conta.json())
-      .then((usuario) => {
-        for(var i=0;i<usuario.rows.length;i++){
+  fetch("http://localhost:3009/lista_usuario")
+    .then((conta) => conta.json())
+    .then((usuarioLista) => {
+      let loginComSucesso = false;
+      let dadosUsuarios = Array.isArray(usuarioLista) ? usuarioLista : (usuarioLista.rows || []);
 
-          
-         
-              if(usuario.rows[i].email === email && usuario.rows[i].senha === senha){
-               console.log(usuario.rows[i].email)
-             document.getElementById("caixa_loga").style.display = "none";
+      for (var i = 0; i < dadosUsuarios.length; i++) {
+        if (dadosUsuarios[i].email === emailInput && dadosUsuarios[i].senha === senhaInput) {
+          loginComSucesso = true;
+          // 🚀 SALVA OS DADOS DO USUÁRIO LOGADO NA VARIÁVEL GLOBAL
+          usuarioLogadoDados = dadosUsuarios[i]; 
+          break;
+        }
+      }
 
-             document.getElementById("foto_cap").style.display = "";
-             document.getElementById("usuario_root").style.display = "";
-            
-               document.getElementById("foto_cap").style.backgroundImage = "url(https://scontent-for2-1.xx.fbcdn.net/v/t39.30808-1/540755178_1075118294778490_2111210186256199447_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeHZw7oEYgQxm7nDvPT5tuncvZpRUb2OThS9mlFRvY5OFI4FfnQPn6e7RPgWskjU7xKJiMQvhliJtpACQ25BY6Me&_nc_ohc=d27Qr9u7pa0Q7kNvwE1Yfmo&_nc_oc=Adn2dWGQ0XFGR5Zhes2I4mhtrpFlsc5PAJjRR_N65-t4jzcbmYTs0OihbwJhWyEA7PQohFe-Ro1Ea5jUBkNa-ZPN&_nc_zt=24&_nc_ht=scontent-for2-1.xx&_nc_gid=gExyNnfkJz4MUT-LDsl7qQ&_nc_ss=8&oh=00_Afy0l2BPFTfC7FuZHOqY_dvPMoioxwD587U68kcIjnDruA&oe=69B0101A)";
-             console.log("Login bem-sucedido!")
-            
-            
-            }
-          
-          }
-})}
-
-
- 
-//loguin do usuario
-
-
-
-//em via mesagem
- function enviar_for() {
- 
- lista_msg1.style.display=""
-const text=inp.value
-
-if (inp.value=='') {
-  console.log('erro')
-   inp.value=''
-}else{
- socket.emit('message',text)
-   inp.value=''
-}
+      if (loginComSucesso) {
+        usuarioLogado = true; // 🔓 Libera a aplicação
+        
+        document.getElementById("caixa_loga").style.display = "none";
+        document.getElementById("foto_cap").style.display = "";
+        document.getElementById("usuario_root").style.display = "";
+        
+        document.getElementById("foto_cap").style.backgroundImage = "url(https://fbcdn.net)";
+        console.log("Login bem-sucedido para:", usuarioLogadoDados.email);
+      } else {
+        alert("Usuário ou senha incorretos!");
+      }
+    })
+    .catch(err => console.error("Erro ao ler dados do servidor:", err));
 }
 
-function x(){
+function x() {
   document.getElementById("caixa_loga").style.display = "none";
   document.getElementById("entra_loga").style.display = "";
 }
-
-//em via mesagem

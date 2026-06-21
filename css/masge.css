@@ -21,6 +21,8 @@
   margin-top: 1px;
   list-style-type: none;
  overflow:auto;
+     -ms-overflow-style: none;
+    scrollbar-width: none;
  
 }
 #arba {
